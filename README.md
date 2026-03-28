@@ -23,7 +23,7 @@ CSV dataset (colors, silhouette, garments, fabrics, patterns, aesthetic)
         ↓
 Trend analysis — frequency distributions per season
         ↓
-    ┌───────────────────────────┬──────────────────────────┐
+    ┌───────────────────────────┐
     ↓                           ↓
 Statistical forecast        Claude API forecast
 (weighted recency +         (reasoning over
