@@ -1,0 +1,7 @@
+fashionAPI.txt
+image-gen-API.txt
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+data/
