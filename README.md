@@ -36,6 +36,7 @@ linear trend projection)     trend summary)
         DALL-E 3 generates images
                 ↓
     SS_2027 predicted looks (two versions)
+    FW_2027 predicted looks (two versions)
 ```
 
 ---
@@ -54,13 +55,13 @@ Raw images are not included in this repository. To reproduce the dataset, downlo
 ## Forecasting Methods
 
 ### Method 1: Claude API Forecast
-The per-season trend summary is passed to Claude as a structured text prompt. Claude reasons about directional shifts — distinguishing SS-specific patterns from FW patterns — and produces a narrative forecast for SS_2027 along with a detailed image generation prompt.
+The per-season trend summary is passed to Claude as a structured text prompt. Claude reasons about directional shifts — distinguishing SS-specific patterns from FW patterns — and produces a narrative forecast for SS_2027 and FW_2027 along with a detailed image generation prompt.
 
 ### Method 2: Statistical Forecast
-Two data-driven approaches run on SS seasons only (ss_2023 → ss_2024 → ss_2025 → ss_2026):
+Two data-driven approaches run on SS seasons only, then FW seasons only:
 
 - **Weighted recency averaging** — computes frequency share of each value per season, weighted so recent seasons count more heavily toward the prediction
-- **Linear trend projection** — fits a linear regression to each value's frequency share across the 4 SS seasons and projects forward to SS_2027, surfacing values that are growing even if not yet dominant
+- **Linear trend projection** — fits a linear regression to each value's frequency share across the 4 SS seasons and projects forward to SS_2027 and FW_2027, surfacing values that are growing even if not yet dominant
 
 The two statistical methods are compared side by side in a bar chart saved to `outputs/`.
 
@@ -68,7 +69,7 @@ The two statistical methods are compared side by side in a bar chart saved to `o
 
 ## Results
 
-Both forecasting methods converge on a **black and gold palette** with **tailored, structured silhouettes** and a **haute couture / avant-garde aesthetic** as the dominant prediction for SS_2027. The linear trend projection additionally surfaces emerging signals like `modern luxury` and `androgynous` that weighted recency does not, reflecting values with upward momentum even if not yet at the top.
+Both forecasting methods converge on a **black and gold palette** with **tailored, structured silhouettes** and a **haute couture / avant-garde aesthetic** as the dominant prediction for SS_2027 and FW_2027. The linear trend projection additionally surfaces emerging signals like `modern luxury` and `androgynous` that weighted recency does not, reflecting values with upward momentum even if not yet at the top.
 
 Generated forecast images are saved in `outputs/`:
 - `forecast_claude_ss2027.png` — image from Claude API forecast
@@ -108,7 +109,9 @@ Fashion-ML-Project/
     ├── valentino_analysis_results.csv
     ├── statistical_forecast.png
     ├── forecast_claude_ss2027.png
-    └── forecast_statistical_ss2027.png
+    ├── forecast_statistical_ss2027.png
+    ├── forecast_claude_fw2027.png
+    └── forecast_statistical_fw2027.png
 ```
 
 ### Running the notebook
